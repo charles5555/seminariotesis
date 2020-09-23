@@ -1,0 +1,12 @@
+#!/usr/bin/gnuplot
+
+set title "Grafica de uncociente de funciones" 
+set xlabel "Valores de x"
+set ylabel "Valores de f(x)=x*exp(x*sin(x)))"
+set terminal postscript eps enhanced color fontscale 1.75 dashlength 4 linewidth 2
+set tics nomirror in scale 2
+set grid xtics
+set grid ytics
+set output "grafica.eps"
+plot "datos.dat" w lp pt 7 ps 2 lw 3 lc rgb 'black' title "f(x)" 
+
