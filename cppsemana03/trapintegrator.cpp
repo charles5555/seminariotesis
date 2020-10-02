@@ -15,20 +15,20 @@ TrapezoidalIntegrator::TrapezoidalIntegrator(double usra, double usrb, int usrn)
 }
 double TrapezoidalIntegrator::Compute(){
 	cout << "Under construction" <<endl;
-	h = (usrb - usra)/(usrn - 1);
-	f = new double[usrn] ;
-	integral = 0;
-	for (int i=0; i<usrn; ++i){
+	double h = (b - a)/(n - 1);
+	double f = new array[n] ;
+	double integral = 0.0e0;
+	for (int i=0; i<n; ++i){
 		f[i]=0;
-}
-	for (int i=1; i<usrn; ++i){
-		f[i]= TrapezoidalIntegrator::Function(usra + i*((usrb - usra)/usrn));
+	}
+	for (int i=1; i<n; ++i){
+		f[i]= TrapezoidalIntegrator::Function(a + i*((b - a)/n));
 		
-}
-	integral = (h/2)*(f[1]+f[usrn]);
-	for (int i=2; i<usrn-1; ++i){
-		integral+= h f[i];
-}
+	}
+	integral = (h/2)*(f[1]+f[n]);
+	for (int i=2; i<n-1; ++i){
+		integral+= h*f[i];
+	}	
 	return integral;
 }
 
